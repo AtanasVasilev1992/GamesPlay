@@ -1,9 +1,15 @@
-function App() {
+import Header from "./componnets/header/Header"
 
+function App() {
+  
   return (
-    <>
-        <h1>Games play</h1>
-    </>
+    <div id="box">
+         <Header />
+
+         <main id="main-content">
+          
+         </main>
+    </div>
   )
 }
 
