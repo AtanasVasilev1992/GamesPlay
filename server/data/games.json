@@ -3,7 +3,7 @@
         "title": "World Of Tanks",
         "category": "War game",
         "maxLevel": "10",
-        "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fworldoftanks.eu%2Fen%2Fgame%2Fdownload%2F&psig=AOvVaw0CsvUCTyREuCjqgPSSuECd&ust=1722194368376000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJiSyY74x4cDFQAAAAAdAAAAABAE",
+        "imageUrl": "https://worldoftanks.eu/static/6.0.5_3a0341/wotp_static/img/download_game/frontend/scss/img/sharing.jpg",
         "summary": "Tanks game from WarGaming",
         "_id": "74546ce5-16a9-48e0-b243-a88b65185edc"
     },
@@ -11,7 +11,7 @@
         "title": "World Of Warships",
         "category": "War game",
         "maxLevel": "10",
-        "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fworldofwarships.eu%2F&psig=AOvVaw3STLITAYqMTLIe9WvAFZt5&ust=1722194456652000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCODN1rj4x4cDFQAAAAAdAAAAABAE",
+        "imageUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/552990/ss_13192e349cc427dc2fb260528c0626c9b778cf8b.1920x1080.jpg?t=1721037890",
         "summary": "Warship game from WarGaming",
         "_id": "b218ef78-ce35-4e39-99b3-d43a8ccdf02f"
     },
@@ -19,7 +19,7 @@
         "title": "World Of Warplanes",
         "category": "War game",
         "maxLevel": "10",
-        "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fworldofwarplanes.com%2Fgame%2F&psig=AOvVaw08npghAaaB90evAwQALg2R&ust=1722194722674000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJCYs7f5x4cDFQAAAAAdAAAAABAE",
+        "imageUrl": "https://worldofwarplanes.com/dcont/fb/image/screen_2-0_1600x900_008.jpg",
         "summary": "Warplane game from WarGaming",
         "_id": "b9110292-d73e-45d4-b032-7f5cf231dcd4"
     }
