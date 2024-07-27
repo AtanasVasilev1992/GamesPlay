@@ -53,5 +53,5 @@ export default function Home () {
             <p className="no-articles">No games yet</p>
         </div>
     </section>
-    )
+    );
 }
