@@ -1,4 +1,5 @@
 import Header from "./componnets/header/Header"
+import Home from "./componnets/home/Home"
 
 function App() {
   
@@ -7,7 +8,7 @@ function App() {
          <Header />
 
          <main id="main-content">
-          
+          <Home/>
          </main>
     </div>
   )
