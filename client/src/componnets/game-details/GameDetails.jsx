@@ -11,7 +11,7 @@ export default function GameDetails() {
             const result = await gamesApi.getOne(gameId);
             setGame(result)
         })();
-    })
+    }, []);
 
     return (
         <section id="game-details">
