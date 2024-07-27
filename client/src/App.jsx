@@ -6,6 +6,7 @@ import Login from './componnets/login/Login'
 import Register from './componnets/register/Register'
 import GameList from './componnets/game-list/GameList'
 import GameCreate from './componnets/game-create/GameCreate'
+import GameDetails from './componnets/game-details/GameDetails'
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
                 <Route path='/login' element={<Login/>} />
                 <Route path='/register' element={<Register />} />
                 <Route path='/games' element={<GameList />} />
+                <Route path='/games/:gameId/details' element={<GameDetails />} />
                 <Route path='/games/create' element={<GameCreate />} />
             </Routes>
          </main>
