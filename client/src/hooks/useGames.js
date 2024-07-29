@@ -21,7 +21,7 @@ export function useGetOneGames(gameId) {
             const result = await gamesAPI.getOne(gameId);
             setGame(result)
         })();
-    }, []);
+    }, [gameId]);
 
     return [
         game,

@@ -1,7 +1,7 @@
 async function requester(method, url, data) {
     const options = {};
 
-    if (method !== 'POST') {
+    if (method !== 'GET') {
         options.method = method;
     }
 
