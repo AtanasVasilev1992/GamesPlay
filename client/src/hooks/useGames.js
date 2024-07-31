@@ -27,4 +27,10 @@ export function useGetOneGames(gameId) {
         game,
         setGame
     ]
+};
+
+export function useCreateGame(gameData) {
+    const gameCreateHadler = (gameData) => gamesAPI.create(gameData);
+
+    return gameCreateHadler
 }

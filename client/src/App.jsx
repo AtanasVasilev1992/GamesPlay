@@ -11,16 +11,20 @@ import GameDetails from './componnets/game-details/GameDetails'
 import { AuthContext } from './contexts/AuthContext'
 
 function App() {
+    // TODO: Remove from App componnent
     const [authState, setAuthState] = useState({});
 
     const changeAuthState = (state) => {
+        // TODO: Quick solution, fix by implementing persisted authState
+        localStorage.setItem('accessToken', state.accessToken);
+
         setAuthState(state);
     };
 
     const contextData = {
         userId: authState._id,
         email: authState.email,
-        accesToken: authState.accesToken,
+        accessToken: authState.accessToken,
         isAuthenticated: !! authState.email,
         changeAuthState,
     };
