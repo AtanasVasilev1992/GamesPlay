@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import Header from "./componnets/header/Header"
@@ -8,29 +7,12 @@ import Register from './componnets/register/Register'
 import GameList from './componnets/game-list/GameList'
 import GameCreate from './componnets/game-create/GameCreate'
 import GameDetails from './componnets/game-details/GameDetails'
-import { AuthContext } from './contexts/AuthContext'
+import { AuthContextProvider } from './contexts/AuthContext'
 
 function App() {
-    // TODO: Remove from App componnent
-    const [authState, setAuthState] = useState({});
-
-    const changeAuthState = (state) => {
-        // TODO: Quick solution, fix by implementing persisted authState
-        localStorage.setItem('accessToken', state.accessToken);
-
-        setAuthState(state);
-    };
-
-    const contextData = {
-        userId: authState._id,
-        email: authState.email,
-        accessToken: authState.accessToken,
-        isAuthenticated: !! authState.email,
-        changeAuthState,
-    };
-
+ 
     return (
-        <AuthContext.Provider value={contextData}>
+        <AuthContextProvider>
             <div id="box">
                 <Header />
 
@@ -45,7 +27,7 @@ function App() {
                     </Routes>
                 </main>
             </div>
-        </AuthContext.Provider>
+        </AuthContextProvider>
     )
 }
 
