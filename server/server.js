@@ -1366,6 +1366,9 @@ const { title } = require('process');
                 summary: "Warplane game from WarGaming",
                 _id: "b9110292-d73e-45d4-b032-7f5cf231dcd4"
             }
+        },
+        comments: {
+
         }
     };
     var rules$1 = {
