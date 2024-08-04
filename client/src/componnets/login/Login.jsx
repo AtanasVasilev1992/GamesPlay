@@ -42,6 +42,7 @@ export default function Login() {
                         name="password"
                         value={values.password}
                         onChange={changeHandler}
+                        placeholder="**********"
                     />
                     <input type="submit" className="btn submit" value="Login" />
                     <p className="field">

@@ -6,31 +6,41 @@ export function useGetAllGames() {
     const [games, setGames] = useState([]);
 
     useEffect(() => {
-        gamesAPI.getAll()
-        .then(result => setGames(result))
+        (async () => {
+            const result = await gamesAPI.getAll();
+
+            setGames(result);
+        })();
     }, []);
 
     return [games, setGames]
 };
 
 export function useGetOneGames(gameId) {
-    const [game, setGame] = useState({});
+    const [game, setGame] = useState({
+        title: '',
+        category: '',
+        maxLevel: '',
+        imageUrl: '',
+        summary: '',
+    });
 
     useEffect(() => {
         (async ()=> {
             const result = await gamesAPI.getOne(gameId);
-            setGame(result)
+
+            setGame(result);
         })();
     }, [gameId]);
 
     return [
         game,
         setGame
-    ]
+    ];
 };
 
-export function useCreateGame(gameData) {
+export function useCreateGame() {
     const gameCreateHadler = (gameData) => gamesAPI.create(gameData);
 
-    return gameCreateHadler
-}
+    return gameCreateHadler;
+};

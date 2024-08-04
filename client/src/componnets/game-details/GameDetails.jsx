@@ -1,14 +1,16 @@
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGetOneGames } from "../../hooks/useGames";
 import { useForm } from "../../hooks/useForm";
 import { useCreateComment, useGetAllComennts } from "../../hooks/useComments";
 import { useAuthContext } from "../../contexts/AuthContext";
+import gamesApi from "../../api/games-api";
 
 const initialValues = {
     comment: ''
 }
 
 export default function GameDetails() {
+    const navigate = useNavigate()
     const { gameId } = useParams();
     const [comments, dispatchComments] = useGetAllComennts(gameId);
     const createComment = useCreateComment();
@@ -22,7 +24,6 @@ export default function GameDetails() {
         try {
             const newComment = await createComment(gameId, comment);
 
-            // setComments(oldComments => [...oldComments, newComment])
             dispatchComments({ type: 'ADD_COMMENT', payload: { ...newComment, author: { email } } })
         } catch (err) {
             console.log(err.message);
@@ -31,6 +32,23 @@ export default function GameDetails() {
     });
 
     const isOwner = userId === game._ownerId;
+
+    const gameDeleteHandler = async () => {
+        const isConfirm = confirm(`Are you sure you want delete game: ${game.title} ?`);
+
+        if(!isConfirm) {
+            return
+        };
+
+        try {
+            await gamesApi.remove(gameId);
+
+            navigate('/');
+        } catch (err) {
+            console.log(err.message);
+            
+        }
+    };
 
     return (
         <section id="game-details">
@@ -64,8 +82,8 @@ export default function GameDetails() {
 
                 {isOwner &&
                     (<div className="buttons">
-                        <a href="#" className="button">Edit</a>
-                        <a href="#" className="button">Delete</a>
+                        <Link to={`/games/${gameId}/edit`}className="button">Edit</Link>
+                        <a href="#" onClick={gameDeleteHandler} className="button">Delete</a>
                     </div>
                     )}
             </div>

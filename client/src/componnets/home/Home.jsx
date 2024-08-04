@@ -7,9 +7,13 @@ export default function Home () {
 
     useEffect(() => {
         ( async() => {
-            // TODO: modify to fetch only latest games
-            const result = await gamesApi.getAll()
-            setLatestGame(result.reverse().slice(0,3));
+            try {
+                const result = await gamesApi.getLatest();
+                
+                setLatestGame(result);
+            } catch (err) {
+                console.log(err.message);
+            }
         })();
     }, []);
 
